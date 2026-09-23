@@ -1329,3 +1329,123 @@
     transition: none;
   }
 }
+
+/* =========================================================
+   iPhone 13 Pro и меньше — до 420px
+   ========================================================= */
+
+   @media (max-width: 420px) {
+
+    /* Карточки стипендий — на всю ширину */
+    .sch-card {
+      width: 100%;
+      max-width: calc(100% - 32px);
+      height: auto;
+      min-height: 240px;
+      padding: 24px 22px;
+      font-size: 17px;
+    }
+  
+    /* Академическая стипендия — компактнее */
+    .sch-acad__card {
+      padding: 22px 18px;
+      border-radius: 12px;
+    }
+  
+    .sch-acad__card h3 {
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+  
+    .sch-acad__card p {
+      font-size: 14px;
+    }
+  
+    /* Карточки PDF — на всю ширину */
+    .sch-pres__doc {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      min-height: auto;
+      padding: 16px;
+      gap: 14px;
+    }
+  
+    .sch-pres__doc-icon {
+      width: 40px;
+      height: 46px;
+    }
+  
+    .sch-pres__doc-text {
+      font-size: 12px;
+    }
+  
+    .sch-pres__doc-text small {
+      font-size: 10.5px;
+      margin-top: 8px;
+    }
+  
+    /* Плашки-ссылки — не вылезают */
+    .sch-btn,
+    .sch-btn--wide {
+      width: 100%;
+      max-width: 100%;
+      font-size: 12px;
+      padding: 10px 10px 10px 18px;
+    }
+  
+    .sch-named__links {
+      width: 100%;
+    }
+  
+    /* Тексты уменьшить */
+    .sch-social__lead,
+    .sch-social__list li,
+    .sch-social__terms,
+    .sch-aspirant__lead,
+    .sch-aspirant__text,
+    .sch-aspirant__list li,
+    .sch-named__text,
+    .sch-named__subtitle,
+    .sch-named__list li,
+    .sch-reward__text,
+    .sch-reward__subtitle,
+    .sch-reward__list li {
+      font-size: 13px;
+    }
+  
+    /* Блок Президента/Правительства */
+    .sch-pres__row {
+      padding: 12px 0;
+    }
+  
+    .sch-pres__label {
+      font-size: 12.5px;
+    }
+  
+    .sch-pres__value,
+    .sch-pres__list li {
+      font-size: 12.5px;
+    }
+  
+    .sch-pres__col h3 {
+      font-size: 15px;
+    }
+  
+    /* Контакты */
+    .sch-contacts__col {
+      font-size: 12.5px;
+    }
+  
+    /* Кнопки внизу */
+    .sch-action-row {
+      font-size: 13.5px;
+      padding: 12px 16px;
+    }
+  
+    .sch-action-button {
+      width: 140px;
+      font-size: 12px;
+      padding-left: 32px;
+    }
+  }
