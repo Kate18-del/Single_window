@@ -1,0 +1,1012 @@
+/* =========================================================
+   ОБРАЗОВАТЕЛЬНЫЙ КРЕДИТ — полный CSS
+   Базовые классы (.hero, .community, .services, .service-card,
+   .footer) берутся из styles.css
+   ========================================================= */
+
+
+/* =========================================================
+   РАСКРЫВАЮЩАЯСЯ СЕКЦИЯ
+   ========================================================= */
+
+   .education-credit {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition: grid-template-rows .6s ease, opacity .4s ease;
+    overflow: hidden;
+    background: #fff;
+  }
+  
+  .education-credit__inner {
+    overflow: hidden;
+    min-height: 0;
+  }
+  
+  .education-credit.is-open {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+  
+  
+  /* =========================================================
+     SECTION TITLE — синие полосы-заголовки
+     Full-bleed на всю ширину окна
+     ========================================================= */
+  
+  .section-title {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    box-sizing: border-box;
+  
+    background: linear-gradient(180deg, #6787ff 0%, #143fff 100%);
+    color: #fff;
+  
+    min-height: 146px;
+    margin-top: 40px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  
+    padding: 0 32px;
+  }
+  
+  .section-title h2 {
+    margin: 0;
+    font-size: 34px;
+    line-height: 1.08;
+    font-weight: 700;
+    letter-spacing: -0.7px;
+  }
+  
+  /* Первая полоса «Образовательный кредит» — без верхнего отступа */
+  .section-title#credit {
+    margin-top: 0;
+  }
+  
+  
+  /* =========================================================
+     CONTENT WRAP — контейнер для секций с текстом
+     ========================================================= */
+  
+  .content-wrap {
+    width: min(100% - 96px, 1085px);
+    margin: 0 auto;
+  }
+  
+  
+  /* =========================================================
+     CREDIT CARDS — 7 карточек 280×337
+     4 сверху, 3 по центру снизу. gap: 79 / 10
+     ========================================================= */
+  
+  .credit-cards {
+    width: min(100% - 96px, 1357px);   /* 4×280 + 3×79 */
+    margin: 51px auto 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 79px;
+    row-gap: 10px;
+  }
+  
+  .credit-card {
+    flex: 0 0 280px;
+    width: 280px;
+    height: 337px;
+    background: #ebebeb;
+    padding: 29px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 19px;
+    line-height: 1.18;
+    color: #171717;
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+                box-shadow 0.35s;
+  }
+  
+  .credit-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(20, 63, 255, 0.12);
+  }
+  
+  .credit-card--blue {
+    background: #143FFF;
+    color: #fff;
+  }
+  
+  .credit-card b {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #143FFF;
+    align-self: flex-start;
+    transition: transform 0.3s ease;
+  }
+  
+  .credit-card--blue b {
+    background: #fff;
+  }
+  
+  .credit-card:hover b {
+    transform: scale(1.12);
+  }
+  
+  
+  /* =========================================================
+     CREDIT LAWS — 2 серых скруглённых блока внизу
+     ========================================================= */
+  
+  .credit-laws {
+    width: min(100% - 96px, 998px);   /* 3×280 + 2×79 */
+    margin: 20px auto 70px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 79px;
+  }
+  
+  .credit-laws article {
+    background: #ebebeb;
+    padding: 28px 30px;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 700;
+    color: #173458;
+    border-radius: 20px;
+  }
+  
+  
+  /* =========================================================
+     TEXT NOTE — инфо-плашка с «i», по центру
+     ========================================================= */
+  
+  .text-note {
+    width: min(875px, calc(100% - 96px));
+    margin: 30px auto 40px;
+    background: #eef1f8;
+    padding: 30px 38px 28px 52px;
+    position: relative;
+    font-size: 16px;
+    line-height: 1.52;
+    color: #173458;
+    box-sizing: border-box;
+  }
+  
+  .text-note p {
+    margin: 0;
+  }
+  
+  .text-note .info-dot,
+  .who__note .info-dot {
+    position: absolute;
+    left: 16px;
+    top: 31px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #143FFF;
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  
+  
+  /* =========================================================
+     TEXT BLOCK
+     ========================================================= */
+  
+  .text-block {
+    width: min(875px, calc(100% - 96px));
+    margin: 0 auto;
+    padding: 30px 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #173458;
+    box-sizing: border-box;
+  }
+  
+  .text-block p {
+    margin: 0;
+  }
+  
+  
+  /* =========================================================
+     CONDITIONS — таблица условий, по центру
+     ========================================================= */
+  
+  .conditions {
+    width: min(875px, calc(100% - 96px));
+    margin: 30px auto 40px;
+    background: #fff;
+    box-shadow: 0 6px 24px rgba(30, 58, 130, 0.08);
+    box-sizing: border-box;
+  }
+  
+  .conditions__head,
+  .conditions__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid #e8e8e8;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  
+  .conditions__head {
+    color: #143FFF;
+    font-weight: 700;
+    background: #f8f9ff;
+  }
+  
+  .conditions__head span,
+  .conditions__row span,
+  .conditions__row strong {
+    padding: 22px 28px;
+  }
+  
+  .conditions__row strong {
+    font-weight: 500;
+    color: #171717;
+  }
+  
+  
+  /* =========================================================
+     WHO — «Кто может получить?»
+     ========================================================= */
+  
+  .who {
+    width: min(875px, calc(100% - 96px));
+    margin: 0 auto 40px;
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 40px;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  
+  .who__note {
+    background: #eef1f8;
+    padding: 30px 38px 28px 52px;
+    position: relative;
+    font-size: 16px;
+    line-height: 1.52;
+    color: #173458;
+  }
+  
+  .who__note p {
+    margin: 0;
+  }
+  
+  .mascot {
+    object-fit: contain;
+    mix-blend-mode: multiply;
+  }
+  
+  .mascot--credit {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+  }
+  
+  
+  /* =========================================================
+   STUDY — «На кого учиться?»
+   ========================================================= */
+
+.study {
+    width: min(1085px, calc(100% - 96px));
+    margin: 0 auto 60px;
+    padding: 30px 0 20px;
+    position: relative;
+    box-sizing: border-box;
+  }
+  
+  .study__lead {
+    font-size: 16px;
+    line-height: 1.55;
+    color: #171717;
+    margin: 0 0 14px;
+  }
+  
+  .study__lead + .study__lead {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .study__lead strong {
+    font-weight: 700;
+  }
+  
+  /* ---------- Сетка колонок ---------- */
+  
+  .study-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    align-items: start;
+    padding-right: 240px;   
+  }
+  
+  .study-col h3 {
+    font-size: 28px;
+    line-height: 1.1;
+    font-weight: 700;
+    color: #143FFF;
+    margin: 0 0 28px;
+  }
+  
+  /* ---------- Список специальностей ---------- */
+  
+  .study-col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .study-col li {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 16px;
+    align-items: flex-start;
+    font-size: 15px;
+    line-height: 1.35;
+    color: #171717;
+  }
+  
+  .study-col li p {
+    margin: 0;
+  }
+  
+  .study-col li strong {
+    font-weight: 700;
+  }
+  
+  
+  .study-icon {
+    display: block;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    object-fit: contain;   
+  }
+   
+  .mascot--study {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 530px;
+    height: 565px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+  }
+
+  /* =========================================================
+   TEXT BLOCK — «Что делать тем, кто взял кредит раньше?»
+   ========================================================= */
+
+.text-block {
+    width: min(875px, calc(100% - 96px));
+    margin: 0 auto;
+    padding: 30px 0;
+    font-size: 20px;          
+    line-height: 1.6;
+    color: #171717;
+    box-sizing: border-box;
+  }
+  
+  .text-block p {
+    margin: 0;
+  }
+  
+  .text-block strong {
+    font-weight: 700;
+  }
+  
+  /* =========================================================
+     ADDRESS — «Куда обращаться?»
+     ========================================================= */
+  
+     .address {
+        width: min(875px, calc(100% - 96px));
+        margin: 30px auto 40px;
+        background: #fff;
+        box-shadow: 0 4px 20px rgba(20, 50, 120, 0.08);
+        padding: 26px 36px;
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        box-sizing: border-box;
+        border-radius: 12px;   
+      }
+      
+      .address p {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.45;
+        color: #171717;
+      }
+      
+      .address p strong {
+        color: #143FFF;
+        font-weight: 700;
+      }
+      
+      .address__details {
+        color: #143FFF;
+        font-weight: 400;
+        margin-left: 6px;
+      }
+      
+      .address__icon {
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
+        object-fit: contain;
+        display: block;
+      }
+  
+  
+ /* =========================================================
+   BENEFITS — «Почему это выгодно?»
+   ========================================================= */
+
+.benefits {
+    width: min(1085px, calc(100% - 96px));
+    margin: 0 auto 60px;
+    padding: 40px 0;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 40px;
+    align-items: start;
+    box-sizing: border-box;
+  }
+  
+  /* ---------- Маскот ---------- */
+  
+  .mascot--bottom {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    display: block;
+  }
+  
+  /* ---------- Правая часть: круг + абзац 1, под ними абзац 2 ---------- */
+  
+  .benefits__content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .benefits__top {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  
+  /* ---------- Круг «СТАВКА 3%» с градиентом ---------- */
+  
+  .benefits__rate {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+  
+    background: linear-gradient(
+      180deg,
+      rgba(20, 63, 255, 0.8) 0%,
+      rgba(20, 63, 255, 1) 100%
+    );
+  
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 24px;
+    box-sizing: border-box;
+    line-height: 1.15;
+  }
+  
+  .benefits__rate-main {
+    font-size: 25px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .benefits__rate-sub {
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.95;
+    display: block;
+    max-width: 160px;
+  }
+  
+  /* ---------- Текст ---------- */
+  
+  .benefits__text {
+    font-size: 20px;
+    line-height: 1.55;
+    color: #171717;
+  }
+  
+  .benefits__text p {
+    margin: 0;
+  }
+  
+  .benefits__text strong {
+    font-weight: 700;
+  }
+  
+  /* Второй абзац — под кругом, во всю ширину правой части */
+  .benefits__text--bottom {
+    max-width: 100%;
+  }
+  
+  
+  /* =========================================================
+     CREDIT ACTIONS — 2 кнопки внизу
+     ========================================================= */
+  
+  .credit-actions {
+    width: min(1085px, calc(100% - 96px));
+    margin: 30px auto 60px;
+    display: grid;
+    gap: 10px;
+    box-sizing: border-box;
+  }
+  
+  .credit-action-row {
+    min-height: 95px;
+    background: #143FFF;
+    color: #fff;
+    padding: 20px 54px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    font-size: 19px;
+    line-height: 1.15;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .credit-action-row:hover {
+    transform: translateX(5px);
+    filter: brightness(0.96);
+  }
+  
+  .credit-action-row strong {
+    font-weight: 700;
+  }
+  
+  .credit-action-button {
+    width: 248px;
+    height: 35px;
+    border-radius: 30px;
+    background: #fff;
+    color: #2b59ef;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px 0 95px;
+    font-size: 11px;
+    flex: none;
+  }
+  
+  .credit-action-button b {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #315cf3;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+  }
+  
+  
+  /* =========================================================
+     REVEAL
+     ========================================================= */
+  
+  .reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity .5s ease, transform .5s ease;
+  }
+  
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+  
+  
+  /* =========================================================
+     АДАПТИВ — ДО 1400 PX
+     ========================================================= */
+  
+  @media (max-width: 1400px) {
+    .credit-cards {
+      width: min(100% - 48px, 998px);
+    }
+    .credit-laws {
+      width: min(100% - 48px, 998px);
+    }
+
+    .study-grid {
+        padding-right: 200px;
+      }
+      .mascot--study {
+        width: 420px;
+        height: 448px;
+      }
+  }
+  
+  
+  /* =========================================================
+     АДАПТИВ — ДО 1100 PX
+     ========================================================= */
+  
+  @media (max-width: 1100px) {
+    .credit-cards {
+      width: min(100% - 48px, 880px);
+      column-gap: 20px;
+      row-gap: 20px;
+    }
+    .credit-laws {
+      width: min(100% - 48px, 880px);
+      gap: 20px;
+    }
+
+    .study-grid {
+        padding-right: 180px;
+        gap: 30px;
+      }
+      .mascot--study {
+        width: 340px;
+        height: 363px;
+      }
+
+      .benefits {
+        grid-template-columns: 260px 220px 1fr;
+        gap: 32px;
+      }
+      .mascot--bottom { max-width: 260px; }
+      .benefits__rate {
+        width: 220px;
+        height: 220px;
+        padding: 20px;
+      }
+      .benefits__rate-main { font-size: 18px; }
+      .benefits__rate-sub { font-size: 12px; max-width: 140px; }
+  }
+  
+  
+  /* =========================================================
+     АДАПТИВ — ДО 900 PX
+     ========================================================= */
+  
+  @media (max-width: 900px) {
+  
+    .section-title { min-height: 110px; margin-top: 32px; padding: 0 24px; }
+    .section-title h2 { font-size: 26px; }
+  
+    .content-wrap { width: calc(100% - 48px); }
+  
+    .credit-cards {
+      width: min(100% - 48px, 580px);
+      column-gap: 20px;
+      row-gap: 20px;
+      margin: 40px auto 16px;
+    }
+  
+    .credit-laws {
+      width: min(100% - 48px, 580px);
+      gap: 20px;
+    }
+    .credit-laws article { font-size: 15px; padding: 22px 24px; border-radius: 18px; }
+  
+    .text-note {
+      width: calc(100% - 48px);
+      padding: 24px 28px 22px 46px;
+      font-size: 15px;
+    }
+  
+    .text-block { width: calc(100% - 48px); }
+  
+    .conditions { width: calc(100% - 48px); }
+    .conditions__head,
+    .conditions__row { font-size: 15px; }
+    .conditions__head span,
+    .conditions__row span,
+    .conditions__row strong { padding: 18px 22px; }
+  
+    .who {
+      width: calc(100% - 48px);
+      grid-template-columns: 1fr 200px;
+      gap: 24px;
+    }
+    .mascot--credit { max-width: 180px; }
+  
+    .study {
+        width: calc(100% - 48px);
+      }
+      .study-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+        padding-right: 160px;
+      }
+      .study-col h3 {
+        font-size: 22px;
+        margin-bottom: 20px;
+      }
+      .study-col ul { gap: 16px; }
+      .study-col li {
+        grid-template-columns: 50px 1fr;
+        gap: 14px;
+        font-size: 14px;
+      }
+      .study-icon {
+        width: 50px;
+        height: 50px;
+      }
+      .mascot--study {
+        width: 260px;
+        height: 277px;
+      }
+  
+      .address {
+        width: calc(100% - 48px);
+        padding: 22px 28px;
+        gap: 18px;
+      }
+      .address p {
+        font-size: 15px;
+      }
+      .address__icon {
+        width: 28px;
+        height: 28px;
+      }
+  
+      .benefits {
+        width: calc(100% - 48px);
+        grid-template-columns: 220px 200px 1fr;
+        gap: 24px;
+      }
+      .mascot--bottom { max-width: 220px; }
+      .benefits__rate {
+        width: 200px;
+        height: 200px;
+      }
+      .benefits__rate-main { font-size: 16px; }
+      .benefits__rate-sub { font-size: 11px; max-width: 120px; }
+      .benefits__text { font-size: 15px; }
+  
+    .credit-actions { width: calc(100% - 48px); }
+    .credit-action-row { min-height: 78px; padding: 16px 32px; font-size: 17px; }
+    .credit-action-button { width: 200px; padding-left: 70px; }
+  }
+  
+  
+  /* =========================================================
+     АДАПТИВ — ДО 700 PX
+     ========================================================= */
+  
+  @media (max-width: 700px) {
+  
+    .section-title { min-height: 90px; padding: 0 16px; }
+    .section-title h2 { font-size: 20px; letter-spacing: -0.3px; }
+  
+    .content-wrap { width: calc(100% - 32px); }
+  
+    .credit-cards {
+      width: calc(100% - 32px);
+      flex-direction: column;
+      align-items: center;
+      column-gap: 0;
+      row-gap: 12px;
+      margin: 30px auto 16px;
+    }
+    .credit-card { width: 280px; flex: 0 0 auto; }
+  
+    .credit-laws {
+      width: calc(100% - 32px);
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin: 16px auto 40px;
+    }
+    .credit-laws article { border-radius: 16px; padding: 20px 22px; }
+  
+    .text-note {
+      width: calc(100% - 32px);
+      padding: 20px 20px 20px 48px;
+      font-size: 14px;
+      margin: 24px auto 30px;
+    }
+    .text-note .info-dot,
+    .who__note .info-dot {
+      left: 14px;
+      top: 21px;
+      width: 18px;
+      height: 18px;
+      font-size: 12px;
+    }
+  
+    .text-block { width: calc(100% - 32px); }
+  
+    .conditions { width: calc(100% - 32px); }
+    .conditions__head,
+    .conditions__row {
+      grid-template-columns: 1fr;
+      font-size: 14px;
+    }
+    .conditions__head span:first-child { display: none; }
+    .conditions__row span {
+      padding-bottom: 4px;
+      color: #6b7a99;
+      font-size: 12px;
+    }
+    .conditions__row strong {
+      padding-top: 0;
+      padding-bottom: 16px;
+    }
+    .conditions__head span,
+    .conditions__row span,
+    .conditions__row strong {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+  
+    .who {
+      width: calc(100% - 32px);
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .mascot--credit { max-width: 160px; margin: 0 auto; display: block; }
+  
+    .study {
+        width: calc(100% - 32px);
+        margin-bottom: 40px;
+        padding-right: 0;
+      }
+      .study__lead {
+        font-size: 14px;
+      }
+      .study-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding-right: 0;
+      }
+      .study-col h3 {
+        font-size: 20px;
+        margin-bottom: 18px;
+      }
+      .study-col ul { gap: 14px; }
+      .study-col li {
+        grid-template-columns: 48px 1fr;
+        gap: 12px;
+        font-size: 13.5px;
+      }
+      .study-icon {
+        width: 48px;
+        height: 48px;
+      }
+      .mascot--study {
+        position: static;
+        display: block;
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        margin: 30px auto 0;
+      }
+  
+      .address {
+        width: calc(100% - 32px);
+        margin: 24px auto 30px;
+        padding: 20px 22px;
+        gap: 14px;
+        align-items: flex-start;
+      }
+      .address p {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .address__details {
+        display: block;
+        margin-left: 0;
+        margin-top: 4px;
+      }
+      .address__icon {
+        width: 24px;
+        height: 24px;
+        margin-top: 2px;
+      }
+  
+      .benefits {
+        width: calc(100% - 32px);
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 30px 0;
+        text-align: center;
+      }
+      .mascot--bottom {
+        max-width: 200px;
+        margin: 0 auto;
+      }
+      .benefits__rate {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto;
+        padding: 18px;
+      }
+      .benefits__rate-main { font-size: 15px; }
+      .benefits__rate-sub { font-size: 10.5px; max-width: 110px; }
+      .benefits__text {
+        font-size: 14px;
+        text-align: left;
+      }
+  
+    .credit-actions {
+      width: calc(100% - 32px);
+      margin: 20px auto 40px;
+    }
+    .credit-action-row {
+      min-height: 70px;
+      font-size: 15px;
+      padding: 14px 20px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .credit-action-button {
+      width: 160px;
+      height: 30px;
+      padding-left: 44px;
+      font-size: 13px;
+      align-self: flex-start;
+    }
+    .credit-action-button b { width: 20px; height: 20px; font-size: 10px; }
+  }
+  
+  
+  /* =========================================================
+     АДАПТИВ — ДО 340 PX
+     ========================================================= */
+  
+  @media (max-width: 340px) {
+    .credit-card { width: 100%; flex: 0 0 auto; }
+    .study-col li {
+        grid-template-columns: 40px 1fr;
+        gap: 10px;
+      }
+      .study-icon {
+        width: 40px;
+        height: 40px;
+      }
+  }
+  
+  
+  /* =========================================================
+     REDUCED MOTION
+     ========================================================= */
+  
+  @media (prefers-reduced-motion: reduce) {
+    .education-credit { transition: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }

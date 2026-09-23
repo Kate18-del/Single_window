@@ -1,0 +1,1932 @@
+/* =========================================================
+   ОБЩЕЖИТИЕ
+   ========================================================= */
+
+
+/* =========================================================
+   РАСКРЫВАЮЩАЯСЯ СЕКЦИЯ
+   ========================================================= */
+
+   .dormitory {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition: grid-template-rows .6s ease, opacity .4s ease;
+    overflow: hidden;
+    background: #fff;
+  }
+  
+  .dormitory__inner {
+    overflow: hidden;
+    min-height: 0;
+  }
+  
+  .dormitory.is-open {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+  
+  
+  /* =========================================================
+     DORM CARDS
+     ========================================================= */
+  
+  .dorm-cards {
+    width: min(100% - 32px, 1716px);
+    margin: 51px auto 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 79px;
+    row-gap: 10px;
+  }
+  
+  .dorm-card {
+    flex: 0 0 280px;
+    width: 280px;
+    height: 337px;
+    background: #ebebeb;
+    padding: 29px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 19px;
+    line-height: 1.18;
+    color: #171717;
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+                box-shadow 0.35s;
+  }
+  
+  .dorm-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(20, 63, 255, 0.12);
+  }
+  
+  .dorm-card--blue {
+    background: #143FFF;
+    color: #fff;
+  }
+  
+  .dorm-card b {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #143FFF;
+    align-self: flex-start;
+    transition: transform 0.3s ease;
+  }
+  
+  .dorm-card--blue b {
+    background: #fff;
+  }
+  
+  .dorm-card:hover b {
+    transform: scale(1.12);
+  }
+  
+  
+  /* =========================================================
+     DORM LINKS
+     ========================================================= */
+  
+  .dorm-links {
+    width: min(100% - 96px, 1085px);
+    margin: 20px auto 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .dorm-link {
+    background: transparent;
+    color: #143FFF;
+    border: 2px solid #143FFF;
+    border-radius: 999px;
+    padding: 16px 22px 16px 32px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  
+    font-size: 16px;
+    line-height: 1.35;
+  
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  }
+  
+  .dorm-link:hover {
+    background: rgba(20, 63, 255, 0.06);
+    transform: translateX(5px);
+  }
+  
+  .dorm-link__dot {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #143FFF;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+  
+  .dorm-link__dot img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    display: block;
+  }
+  
+  .dorm-link:hover .dorm-link__dot {
+    transform: rotate(45deg);
+  }
+  
+  
+  /* =========================================================
+     DORM CAMPUS
+     ========================================================= */
+  
+  .dorm-campus {
+    position: relative;
+    margin: 30px auto 0;
+    padding-bottom: 60px;
+    overflow: hidden;
+    min-height: 520px;
+  }
+  
+  .dorm-campus__title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #143FFF;
+    margin: 0 0 20px;
+    line-height: 1.15;
+  }
+  
+  .dorm-campus__lead {
+    font-size: 15px;
+    line-height: 1.55;
+    color: #171717;
+    margin: 0 0 28px;
+    max-width: 760px;
+  }
+  
+  .dorm-campus__subtitle {
+    font-size: 30px;
+    font-weight: 700;
+    color: #143FFF;
+    margin: 48px 0 28px;
+    line-height: 1.1;
+  }
+  
+  .dorm-campus__rooms {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin: 0 auto 40px;
+    max-width: 900px;
+    justify-content: center;
+  }
+  
+  .dorm-room {
+    background: linear-gradient(
+      180deg,
+      rgba(20, 63, 255, 0.8) 0%,
+      rgba(20, 63, 255, 1) 100%
+    );
+    color: #fff;
+    border-radius: 16px;
+    padding: 32px 36px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    min-height: 160px;
+  }
+  
+  .dorm-room p {
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+    line-height: 1.4;
+    text-align: center;
+  }
+  
+  .dorm-room strong {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .dorm-visit {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-bottom: 120px;
+    align-items: flex-start;
+  }
+  
+  .dorm-visit__item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    font-size: 15px;
+    line-height: 1.45;
+    color: #002147;
+    min-width: 0;
+  }
+  
+  .dorm-visit__item p {
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+  }
+  
+  .dorm-visit__icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    object-fit: contain;
+    display: block;
+    margin: 0;
+  }
+  
+  .dorm-campus__note {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #000000;
+    margin: 0;
+    max-width: 640px;
+    margin-bottom: 50px;
+  }
+  
+  .mascot--dorm {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 320px;
+    height: auto;
+    object-fit: contain;
+    object-position: right bottom;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+  }
+  
+  
+  /* =========================================================
+     КАРУСЕЛЬ
+     ========================================================= */
+  
+  .dorm-carousel {
+    position: relative;
+    margin-bottom: 32px;
+  }
+  
+  .dorm-carousel__viewport {
+    overflow: hidden;
+    border-radius: 4px;
+  }
+  
+  .dorm-carousel__track {
+    display: flex;
+    gap: 12px;
+    transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: transform;
+  }
+  
+  .dorm-carousel__track img {
+    flex: 0 0 calc((100% - 24px) / 3);
+    width: calc((100% - 24px) / 3);
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+  
+  .dorm-carousel__arrows {
+    position: absolute;
+    right: 0;
+    top: -60px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .dorm-arrow {
+    width: 40px;
+    height: 40px;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.25s ease, filter 0.25s ease;
+  }
+  
+  .dorm-arrow img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    pointer-events: none;
+  }
+  
+  .dorm-arrow:hover {
+    transform: scale(1.08);
+    filter: brightness(1.1);
+  }
+  
+  .dorm-arrow:disabled {
+    opacity: 0.4;
+    cursor: default;
+    transform: none;
+    filter: none;
+  }
+  
+  
+  /* =========================================================
+   DORM EXTRA
+   ========================================================= */
+
+.dorm-extra {
+  margin: 30px auto 60px;
+}
+
+.dorm-extra__note {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: #eef1f8;
+  padding: 24px 32px;
+  margin-bottom: 28px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: #173458;
+}
+
+.dorm-extra__note p {
+  margin: 0;
+  padding: 0;
+}
+
+.dorm-extra__note .info-dot {
+  position: static;
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #143FFF;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.dorm-extra__lead {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #171717;
+  margin: 0 0 18px;
+  max-width: 900px;
+}
+
+/* Сетка: [большое фото] [2 фото] [2 карточки] */
+
+.dorm-extra__layout {
+  width: min(100%, 1344px);
+  margin: 30px auto 0;
+  display: grid;
+  grid-template-columns: 387px 1fr 387px;
+  grid-template-rows: 212px 295px;
+  gap: 16px;
+}
+
+.dorm-extra__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+
+.dorm-extra__photo--tall {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+
+.dorm-extra__layout > .dorm-extra__photo:nth-child(2) {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.dorm-extra__layout > .dorm-extra__photo:nth-child(3) {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+/* =========================================================
+   DORM EXTRA CARDS
+   ========================================================= */
+
+.dorm-extra__card {
+  border-radius: 16px;
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.dorm-extra__card--white {
+  background: #eef1f8;
+  color: #143FFF;
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+}
+
+.dorm-extra__card--blue {
+  background: linear-gradient(
+    180deg,
+    rgba(20, 63, 255, 0.8) 0%,
+    rgba(20, 63, 255, 1) 100%
+  );
+  color: #fff;
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+
+.dorm-extra__card h3 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.dorm-extra__card p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+/* Кнопка под сеткой */
+
+.dorm-extra__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.dorm-extra__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-width: 240px;
+  padding: 12px 14px 12px 28px;
+  border: 2px solid #143FFF;
+  border-radius: 999px;
+  background: #fff;
+  color: #143FFF;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.dorm-extra__button:hover {
+  background: rgba(20, 63, 255, 0.06);
+}
+
+.dorm-extra__button-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #143FFF;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+  
+  
+  /* =========================================================
+     DORM WHO
+     ========================================================= */
+  
+  .dorm-who {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin: 30px auto 60px;
+    text-align: center;
+  }
+  
+  .dorm-who__icon {
+    display: block;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 20px;
+    background: transparent;
+    border-radius: 0;
+    overflow: visible;
+  }
+  
+  .dorm-who__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+  .dorm-who__item h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #000000;
+    margin: 0 0 12px;
+    line-height: 1.3;
+  }
+  
+  .dorm-who__item p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #171717;
+    margin: 0;
+  }
+  
+  
+ /* =========================================================
+   DORM PRIORITY
+   ========================================================= */
+
+.dorm-priority {
+  margin: 30px auto 60px;
+}
+
+.dorm-priority__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.dorm-priority__item {
+  background: #FFFFFF;
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+  text-align: center;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 2px 4px rgba(20, 30, 70, 0.06),
+    inset 0 2px 0 #ffffff,
+    inset 0 -2px 0 rgba(0, 0, 0, 0.04);
+}
+
+.dorm-priority__item p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #0B1F33;
+  font-weight: 700;
+  text-align: center;
+}
+
+.dorm-icon-sm {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: block;
+  background: transparent;
+  border-radius: 0;
+  position: static;
+}
+
+.dorm-icon-sm img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+
+/* =========================================================
+   DORM STEPS — таймлайн «Как получить место»
+   ========================================================= */
+
+   .dorm-steps {
+    position: relative;
+    width: min(100% - 96px, 720px);
+    margin: 30px auto 0;
+    padding-bottom: 0;
+  }
+
+  .dorm-timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+  }
+  
+  /* Вертикальная линия по центру */
+  .dorm-timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 45px;
+    bottom: 45px;
+    width: 2px;
+    background: #143FFF;
+    transform: translateX(-50%);
+    z-index: 0;
+  }
+  
+  /* Ряд таймлайна: 3 колонки — контент / точка / пустышка */
+  .dorm-tl__row {
+    display: grid;
+    grid-template-columns: 1fr 40px 1fr;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    min-height: 90px;
+  }
+  /* Слева — контент в первой колонке, справа от линии */
+  .dorm-tl__row--left .dorm-tl__content {
+    grid-column: 1 / 2;
+    justify-self: end;
+    text-align: center;
+    padding-right: 40px;
+  }
+  
+  .dorm-tl__row--left .dorm-tl__dot {
+    grid-column: 2 / 3;
+    justify-self: center;
+  }
+  
+  .dorm-tl__row--left .dorm-tl__spacer {
+    grid-column: 3 / 4;
+  }
+  
+  /* Справа — контент в третьей колонке, слева от линии */
+  .dorm-tl__row--right .dorm-tl__spacer {
+    grid-column: 1 / 2;
+  }
+  
+  .dorm-tl__row--right .dorm-tl__dot {
+    grid-column: 2 / 3;
+    justify-self: center;
+  }
+  
+  .dorm-tl__row--right .dorm-tl__content {
+    grid-column: 3 / 4;
+    justify-self: start;
+    text-align: center;
+    padding-left: 40px;
+  }
+  
+  /* Точка на линии */
+  .dorm-tl__dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #143FFF;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Контент */
+  .dorm-tl__content {
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  /* Иконка */
+  .dorm-tl__icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4px;
+  }
+  
+  .dorm-tl__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+  
+  /* Заголовок */
+  .dorm-tl__content h3 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+    color: #002147;
+    line-height: 1.25;
+    text-align: center;
+  }
+  
+  /* Текст */
+  .dorm-tl__content p {
+    margin: 0;
+    font-size: 12.5px;
+    line-height: 1.2;
+    color: #171717;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  /* Отдельные абзацы в последнем блоке */
+  .dorm-tl__content--note p + p {
+    margin-top: 10px;
+  }
+  
+  /* Маскот — справа снизу */
+  .mascot--dorm2 {
+    position: absolute;
+    right: 0;
+    bottom: 0;                
+    width: 260px;
+    height: auto;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+  }
+  
+  /* =========================================================
+     DORM DOCS
+     ========================================================= */
+  
+  .dorm-docs {
+    margin: 30px auto 60px;
+  }
+
+  .section-title--no-gap {
+    margin-top: 0;
+  }
+  
+  .dorm-docs__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .dorm-doc {
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(20, 50, 120, 0.08);
+    padding: 24px 22px;
+    text-align: center;
+  }
+  
+  .dorm-doc img {
+    width: 54px;
+    height: 54px;
+    object-fit: contain;
+    margin: 0 auto 16px;
+    display: block;
+  }
+  
+  .dorm-doc h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #143FFF;
+    margin: 0 0 10px;
+    line-height: 1.3;
+  }
+  
+  .dorm-doc p {
+    font-size: 12px;
+    line-height: 1.45;
+    color: #171717;
+    margin: 0;
+  }
+  
+  
+ /* =========================================================
+   DORM COST — «Стоимость проживания и оплата»
+   ========================================================= */
+
+   .dorm-cost {
+    position: relative;
+    margin: 30px auto 0;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    height: 380px;                
+  }
+
+.dorm-cost__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px 40px;
+  max-width: 760px;
+}
+
+.dorm-cost__item {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.dorm-cost__icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  object-fit: contain;
+  display: block;
+}
+
+.dorm-cost__text h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #002147;
+  line-height: 1.25;
+}
+
+.dorm-cost__text p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #171717;
+}
+
+/* Кнопка-плашка снизу */
+
+.dorm-cost__info {
+  position: absolute;            /* ← плашка вырвана из потока */
+  left: 0;
+  bottom: 0;                     /* ← прижата к низу блока */
+  width: 100%;
+  max-width: 560px;
+  margin: 0;
+  padding: 8px 8px 8px 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  border: 2px solid #143FFF;
+  border-radius: 999px;
+  background: #fff;
+  color: #143FFF;
+
+  font-size: 12px;
+  line-height: 1.25;
+  text-decoration: none;
+
+  transition: background 0.25s ease;
+}
+
+.dorm-cost__info:hover {
+  background: rgba(20, 63, 255, 0.06);
+}
+
+.dorm-cost__info span {
+  flex: 1 1 auto;
+  text-align: left;
+  white-space: normal;              
+}
+
+.dorm-cost__info-dot {
+  width: 24px;                      
+  height: 24px;
+  border-radius: 50%;
+  background: #143FFF;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Маскот */
+
+.mascot--dorm3 {
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  width: 440px;
+  height: auto;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+ /* =========================================================
+   DORM RIGHTS
+   ========================================================= */
+
+   .dorm-rights {
+    position: relative;
+    margin: 30px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding-bottom: 200px;   
+  }
+
+.dorm-rights__col h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #143FFF;
+  margin: 0 0 28px;
+  line-height: 1.15;
+}
+
+.dorm-rights__col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dorm-rights__col li {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 16px;
+  align-items: center;         
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: #171717;
+}
+.dorm-rights__col li p {
+  margin: 0;
+  padding: 0;
+}
+
+.dorm-rights__col li strong {
+  font-weight: 700;
+}
+
+
+.dorm-rights__icon {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  object-fit: contain;
+  display: block;
+}
+
+/* Маскот */
+
+.mascot--dorm4 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -40px;
+  width: 313px;
+  height: auto;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+  
+
+/* =========================================================
+   DORM PASS — «Пропускной режим и правила для гостей»
+   ========================================================= */
+
+   .dorm-pass {
+    margin: 30px auto 60px;
+  }
+  
+  .dorm-pass__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 60px;
+    row-gap: 0;
+  }
+  
+  .dorm-pass__item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 40px 0;
+    position: relative;
+  }
+  
+  /* Второй ряд — отступ сверху */
+  
+  .dorm-pass__item:nth-child(3),
+  .dorm-pass__item:nth-child(4) {
+    padding-top: 40px;
+  }
+  
+  /* Пунктир под 1-м и 2-м — толстый и редкий */
+  
+  .dorm-pass__item:nth-child(1),
+  .dorm-pass__item:nth-child(2) {
+    padding-bottom: 60px;
+    position: relative;
+  }
+  
+  .dorm-pass__item:nth-child(1)::after,
+  .dorm-pass__item:nth-child(2)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 4px;
+    background-image: repeating-linear-gradient(
+      to right,
+      #143FFF 0,
+      #143FFF 24px,
+      transparent 24px,
+      transparent 56px
+    );
+  }
+  
+  /* Иконка */
+  
+  .dorm-pass__icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+  }
+  
+  /* Текст */
+  
+  .dorm-pass__text h3 {
+    margin: 0 0 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #171717;    
+    line-height: 1.3;
+  }
+  
+  .dorm-pass__text .accent {
+    color: #143FFF;
+    font-weight: 700;
+  }
+
+  .dorm-pass__text h3 strong {
+    color: #143FFF;
+    font-weight: 700;
+  }
+  
+  .dorm-pass__text p {
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #171717;
+  }
+  
+  .dorm-pass__text p:last-child {
+    margin-bottom: 0;
+  }
+  
+  .dorm-pass__text p strong {
+    font-weight: 700;
+    color: #171717;
+  }
+
+  /* =========================================================
+     DORM COUNCIL
+     ========================================================= */
+  
+  .dorm-council {
+    margin: 30px auto 60px;
+  }
+  
+  .dorm-council__note {
+    position: relative;
+    background: #eef1f8;
+    padding: 26px 34px 24px 56px;
+    font-size: 15px;
+    line-height: 1.55;
+    color: #173458;
+  }
+  
+  .dorm-council__note p {
+    margin: 0;
+  }
+  
+  .dorm-council__note .info-dot {
+    position: absolute;
+    left: 20px;
+    top: 28px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #143FFF;
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  
+  
+  /* =========================================================
+   DORM CONTACTS — «Контакты»
+   ========================================================= */
+
+.dorm-contacts {
+  position: relative;
+  margin: 40px auto 0px;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 40px;
+  align-items: center;
+}
+
+.dorm-contacts__text p {
+  font-size: 23px;
+  line-height: 1.55;
+  color: #000000;
+  margin: 0 0 14px;
+  max-width: 480px;
+}
+
+.dorm-contacts__text p:last-child {
+  margin-bottom: 0;
+}
+
+.dorm-contacts__text a {
+  color: #143FFF;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.dorm-contacts__text a:hover {
+  text-decoration: none;
+}
+
+.mascot--dorm5 {
+  width: 550px;
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  justify-self: end;
+  display: block;
+  pointer-events: none;
+}
+  
+  
+  /* =========================================================
+     DORM ACTIONS
+     ========================================================= */
+  
+  .dorm-actions {
+    width: min(1085px, calc(100% - 96px));
+    margin: 0px auto 60px;
+    display: grid;
+    gap: 10px;
+  }
+  
+  .dorm-action-row {
+    min-height: 95px;
+    background: #143FFF;
+    color: #fff;
+    padding: 20px 54px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    font-size: 19px;
+    line-height: 1.15;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .dorm-action-row:hover {
+    transform: translateX(5px);
+    filter: brightness(0.96);
+  }
+  
+  .dorm-action-row strong {
+    font-weight: 700;
+  }
+  
+  .dorm-action-button {
+    width: 248px;
+    height: 35px;
+    border-radius: 30px;
+    background: #fff;
+    color: #2b59ef;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px 0 95px;
+    font-size: 16px;
+    font-weight: 500;
+    flex: none;
+  }
+  
+  .dorm-action-button b {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #315cf3;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  
+  
+ /* =========================================================
+   АДАПТИВ — 1800
+   ========================================================= */
+
+@media (max-width: 1800px) {
+  .dorm-cards {
+    width: min(100% - 32px, 1560px);
+    column-gap: 40px;
+  }
+}
+
+@media (max-width: 1650px) {
+  .dorm-cards {
+    width: min(100% - 32px, 1480px);
+    column-gap: 20px;
+  }
+}
+
+
+/* =========================================================
+   АДАПТИВ — 1500
+   ========================================================= */
+
+@media (max-width: 1500px) {
+  .dorm-cards {
+    width: min(100% - 48px, 1150px);
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+}
+
+
+/* =========================================================
+   АДАПТИВ — 1400
+   ========================================================= */
+
+@media (max-width: 1400px) {
+  .dorm-extra__layout {
+    width: 100%;
+    grid-template-columns: 1fr 1.4fr 1fr;
+    grid-template-rows: 200px 260px;
+  }
+
+  .dorm-extra__card h3 { font-size: 13.5px; }
+  .dorm-extra__card p { font-size: 10.5px; }
+}
+
+
+/* =========================================================
+   АДАПТИВ — 1200
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .dorm-cards {
+    width: min(100% - 48px, 880px);
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+
+  .dorm-links { width: calc(100% - 48px); }
+  .dorm-link { font-size: 15px; padding: 16px 22px; }
+
+  .dorm-contacts { grid-template-columns: 1fr 260px; }
+  .mascot--dorm5 { width: 260px; }
+
+  .dorm-contacts__text p { font-size: 17px; }
+
+  .dorm-carousel__arrows { top: -52px; }
+  .dorm-arrow { width: 36px; height: 36px; }
+
+  .dorm-extra__layout {
+    grid-template-columns: 1fr 1.3fr 1fr;
+    grid-template-rows: 190px 250px;
+  }
+
+  .dorm-rights { padding-bottom: 160px; }
+  .mascot--dorm4 { width: 260px; }
+
+  .mascot--dorm3 { width: 340px; }
+}
+
+
+/* =========================================================
+   АДАПТИВ — 1000
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  /* ---------- Карусель ---------- */
+  .dorm-carousel__track img {
+    flex: 0 0 calc((100% - 12px) / 2);
+    width: calc((100% - 12px) / 2);
+  }
+
+  /* ---------- Кампус ---------- */
+  .dorm-campus {
+    padding-bottom: 0;
+    min-height: auto;
+    overflow: visible;
+  }
+
+  .dorm-campus__subtitle {
+    font-size: 24px;
+    margin: 36px 0 22px;
+  }
+
+  .dorm-campus__rooms {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 600px;
+  }
+
+  .dorm-room { min-height: 130px; }
+
+  .dorm-visit {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .dorm-visit__icon { width: 32px; height: 32px; }
+
+  .mascot--dorm {
+    position: static;
+    width: 220px;
+    margin: 30px auto 0;
+    display: block;
+    right: auto;
+    bottom: auto;
+  }
+
+  /* ---------- Доп. информация (сетка фото + карточки) ---------- */
+  .dorm-extra__layout {
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 14px;
+  }
+
+  .dorm-extra__photo--tall {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    height: 100%;
+    min-height: 400px;
+  }
+
+  .dorm-extra__layout > .dorm-extra__photo:nth-child(2) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    height: 200px;
+  }
+
+  .dorm-extra__layout > .dorm-extra__photo:nth-child(3) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    height: 200px;
+  }
+
+  .dorm-extra__card--white,
+  .dorm-extra__card--blue {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    padding: 22px 20px;
+    min-height: 0;
+    height: auto;
+  }
+
+  /* ---------- Кто имеет право ---------- */
+  .dorm-who {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    text-align: left;
+  }
+
+  .dorm-who__icon {
+    margin: 0 0 14px;
+    width: 70px;
+    height: 70px;
+  }
+
+  /* ---------- Льготные категории ---------- */
+  .dorm-priority__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* ---------- Таймлайн ---------- */
+  .dorm-steps {
+    width: calc(100% - 48px);
+  }
+
+  .dorm-timeline::before {
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    transform: none;
+  }
+
+  .dorm-timeline {
+    gap: 30px;
+  }
+
+  .dorm-tl__row {
+    grid-template-columns: 40px 1fr;
+    align-items: flex-start;
+  }
+
+  .dorm-tl__row--left .dorm-tl__content,
+  .dorm-tl__row--right .dorm-tl__content {
+    grid-column: 2 / 3;
+    justify-self: start;
+    text-align: left;
+    padding-right: 0;
+    padding-left: 20px;
+    max-width: 100%;
+    align-items: flex-start;
+  }
+
+  .dorm-tl__row--left .dorm-tl__dot,
+  .dorm-tl__row--right .dorm-tl__dot {
+    grid-column: 1 / 2;
+    justify-self: center;
+    align-self: flex-start;
+    margin-top: 12px;
+  }
+
+  .dorm-tl__row--left .dorm-tl__spacer,
+  .dorm-tl__row--right .dorm-tl__spacer {
+    display: none;
+  }
+
+  .dorm-tl__content h3,
+  .dorm-tl__content p {
+    text-align: left;
+  }
+
+  .mascot--dorm2 {
+    position: static;
+    margin: 24px auto 0;
+    display: block;
+  }
+
+  /* ---------- Документы ---------- */
+  .dorm-docs__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* ---------- Стоимость проживания ---------- */
+  .dorm-cost {
+    height: auto;
+    display: block;
+    padding-bottom: 0;
+  }
+
+  .dorm-cost__info {
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    margin: 40px auto 0;
+  }
+
+  .mascot--dorm3 {
+    position: static;
+    margin: 24px auto 0;
+    display: block;
+    width: 300px;
+  }
+
+  /* ---------- Права и обязанности ---------- */
+  .dorm-rights {
+    grid-template-columns: 1fr;
+    padding-bottom: 0;
+    gap: 28px;
+  }
+
+  .mascot--dorm4 {
+    position: static;
+    transform: none;
+    margin: 24px auto 0;
+    display: block;
+    width: 260px;
+  }
+
+  /* ---------- Пропускной режим ---------- */
+  .dorm-pass__grid {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+
+  .dorm-pass__item {
+    grid-template-columns: 70px 1fr;
+    gap: 18px;
+    padding: 32px 0;
+  }
+
+  .dorm-pass__item:nth-child(1),
+  .dorm-pass__item:nth-child(2) {
+    padding-bottom: 32px;
+  }
+
+  .dorm-pass__item:nth-child(1)::after,
+  .dorm-pass__item:nth-child(2)::after {
+    display: none;
+  }
+
+  .dorm-pass__item:nth-child(2),
+  .dorm-pass__item:nth-child(3) {
+    padding-bottom: 32px;
+  }
+
+  .dorm-pass__item:nth-child(2)::after,
+  .dorm-pass__item:nth-child(3)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 4px;
+    background-image: repeating-linear-gradient(
+      to right,
+      #143FFF 0,
+      #143FFF 24px,
+      transparent 24px,
+      transparent 56px
+    );
+  }
+
+  .dorm-pass__item:nth-child(3),
+  .dorm-pass__item:nth-child(4) {
+    padding-top: 32px;
+  }
+
+  .dorm-pass__icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  /* ---------- Контакты ---------- */
+  .dorm-contacts {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .dorm-contacts__text p { font-size: 15px; }
+
+  .mascot--dorm5 {
+    width: 280px;
+    justify-self: center;
+  }
+
+  /* ---------- Кнопки ---------- */
+  .dorm-action-row {
+    min-height: 78px;
+    padding: 16px 32px;
+    font-size: 17px;
+  }
+
+  .dorm-action-button {
+    width: 200px;
+    padding-left: 70px;
+  }
+}
+
+
+/* =========================================================
+   АДАПТИВ — 900
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .dorm-extra__layout {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .dorm-extra__photo--tall {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    height: 100%;
+    min-height: 380px;
+  }
+
+  .dorm-extra__layout > .dorm-extra__photo:nth-child(2) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    height: 180px;
+  }
+
+  .dorm-extra__layout > .dorm-extra__photo:nth-child(3) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    height: 180px;
+  }
+
+  .dorm-extra__card--white,
+  .dorm-extra__card--blue {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    padding: 20px 18px;
+  }
+
+  .dorm-extra__card h3 { font-size: 14px; }
+  .dorm-extra__card p { font-size: 11px; }
+}
+
+
+/* =========================================================
+   АДАПТИВ — 700
+   ========================================================= */
+
+@media (max-width: 700px) {
+  /* ---------- Карточки ---------- */
+  .dorm-cards {
+    width: calc(100% - 32px);
+    flex-direction: column;
+    align-items: center;
+    column-gap: 0;
+    row-gap: 12px;
+    margin: 30px auto 16px;
+  }
+
+  .dorm-card { width: 280px; flex: 0 0 auto; }
+
+  /* ---------- Ссылки ---------- */
+  .dorm-links { width: calc(100% - 32px); }
+  .dorm-link { font-size: 14px; padding: 14px 18px; }
+  .dorm-link__dot { width: 28px; height: 28px; font-size: 13px; }
+  .dorm-link__dot img { width: 14px; height: 14px; }
+
+  /* ---------- Кампус ---------- */
+  .dorm-campus__title { font-size: 22px; }
+  .dorm-campus__subtitle { font-size: 20px; margin: 28px 0 16px; }
+  .dorm-campus__rooms { grid-template-columns: 1fr; gap: 14px; }
+  .dorm-room { padding: 24px 22px; border-radius: 12px; min-height: auto; }
+  .dorm-room strong { font-size: 17px; }
+  .dorm-room p { font-size: 14px; }
+
+  .dorm-visit { gap: 16px; }
+  .dorm-visit__item { font-size: 13.5px; gap: 12px; }
+  .dorm-visit__icon { width: 32px; height: 32px; }
+
+  .dorm-campus__note { font-size: 15px; margin-bottom: 30px; }
+
+  /* ---------- Карусель ---------- */
+  .dorm-carousel__track img {
+    flex: 0 0 100%;
+    width: 100%;
+    height: auto;
+  }
+
+  .dorm-carousel__arrows {
+    position: static;
+    justify-content: flex-end;
+    margin-top: 12px;
+  }
+
+  .dorm-arrow { width: 34px; height: 34px; }
+
+  /* ---------- Доп. информация ---------- */
+  .dorm-extra__note { flex-direction: column; gap: 10px; padding: 18px 20px; }
+  .dorm-extra__lead { font-size: 14px; }
+
+  .dorm-extra__layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 12px;
+  }
+
+  .dorm-extra__photo--tall,
+  .dorm-extra__layout > .dorm-extra__photo:nth-child(2),
+  .dorm-extra__layout > .dorm-extra__photo:nth-child(3),
+  .dorm-extra__card--white,
+  .dorm-extra__card--blue {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    height: auto;
+  }
+
+  .dorm-extra__photo--tall { height: 400px; min-height: 0; }
+
+  .dorm-extra__layout > .dorm-extra__photo:nth-child(2),
+  .dorm-extra__layout > .dorm-extra__photo:nth-child(3) { height: 200px; }
+
+  .dorm-extra__card { padding: 20px 18px; gap: 8px; }
+  .dorm-extra__card h3 { font-size: 14px; }
+  .dorm-extra__card p { font-size: 11.5px; }
+
+  .dorm-extra__button { min-width: 200px; font-size: 14px; }
+
+  /* ---------- Кто имеет право ---------- */
+  .dorm-who__icon { width: 60px; height: 60px; margin: 0 0 12px; }
+
+  /* ---------- Льготные категории ---------- */
+  .dorm-priority__grid { grid-template-columns: 1fr; }
+  .dorm-priority__item { padding: 22px 18px; gap: 12px; border-radius: 14px; }
+  .dorm-priority__item p { font-size: 13.5px; }
+  .dorm-icon-sm { width: 44px; height: 44px; }
+
+  /* ---------- Таймлайн ---------- */
+  .dorm-steps { width: calc(100% - 32px); }
+  .dorm-tl__content h3 { font-size: 15px; }
+  .dorm-tl__content p { font-size: 12.5px; }
+  .dorm-tl__icon { width: 40px; height: 40px; }
+  .mascot--dorm2 { width: 200px; }
+
+  /* ---------- Документы ---------- */
+  .dorm-docs__grid { grid-template-columns: 1fr; }
+  .dorm-doc h3 { font-size: 16px; }
+  .dorm-doc p { font-size: 12.5px; }
+
+  /* ---------- Стоимость проживания ---------- */
+  .dorm-cost__grid { grid-template-columns: 1fr; gap: 24px; }
+  .dorm-cost__text h3 { font-size: 14px; }
+  .dorm-cost__text p { font-size: 12.5px; }
+  .dorm-cost__icon { width: 40px; height: 40px; }
+
+  .dorm-cost__info {
+    padding: 10px 10px 10px 18px;
+    font-size: 12px;
+  }
+
+  .dorm-cost__info-dot { width: 22px; height: 22px; font-size: 11px; }
+
+  .mascot--dorm3 { width: 220px; }
+
+  /* ---------- Права и обязанности ---------- */
+  .dorm-rights__col h3 { font-size: 18px; margin-bottom: 20px; }
+  .dorm-rights__col ul { gap: 14px; }
+  .dorm-rights__col li {
+    grid-template-columns: 44px 1fr;
+    gap: 12px;
+    font-size: 13px;
+  }
+  .dorm-rights__icon { width: 44px; height: 44px; }
+  .mascot--dorm4 { width: 220px; }
+
+  /* ---------- Пропускной режим ---------- */
+  .dorm-pass__item { grid-template-columns: 60px 1fr; gap: 14px; padding: 24px 0; }
+  .dorm-pass__icon { width: 60px; height: 60px; }
+  .dorm-pass__text h3 { font-size: 14px; }
+  .dorm-pass__text p { font-size: 13px; }
+
+  /* ---------- Студенческое самоуправление ---------- */
+  .dorm-council__note {
+    padding: 20px 20px 18px 48px;
+    font-size: 14px;
+  }
+
+  /* ---------- Контакты ---------- */
+  .dorm-contacts__text p { font-size: 14px; }
+  .mascot--dorm5 { width: 220px; }
+
+  /* ---------- Кнопки ---------- */
+  .dorm-actions {
+    width: calc(100% - 32px);
+    margin: 20px auto 40px;
+  }
+
+  .dorm-action-row {
+    min-height: 70px;
+    font-size: 15px;
+    padding: 14px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .dorm-action-button {
+    width: 160px;
+    height: 30px;
+    padding-left: 44px;
+    font-size: 13px;
+    align-self: flex-start;
+  }
+
+  .dorm-action-button b { width: 20px; height: 20px; font-size: 10px; }
+
+  .mascot--dorm { width: 180px; }
+}
+
+
+/* =========================================================
+   АДАПТИВ — 480
+   ========================================================= */
+
+@media (max-width: 480px) {
+  /* ---------- Карточки ---------- */
+  .dorm-card { width: 100%; max-width: 280px; }
+
+  /* ---------- Кампус ---------- */
+  .dorm-room { padding: 20px 18px; }
+  .dorm-room strong { font-size: 16px; }
+  .dorm-room p { font-size: 13px; }
+  .dorm-visit__item { font-size: 13px; }
+
+  /* ---------- Доп. информация ---------- */
+  .dorm-extra__lead { font-size: 13px; }
+  .dorm-extra__photo--tall { height: 340px; }
+  .dorm-extra__layout > .dorm-extra__photo:nth-child(2),
+  .dorm-extra__layout > .dorm-extra__photo:nth-child(3) { height: 180px; }
+  .dorm-extra__card h3 { font-size: 13px; }
+  .dorm-extra__card p { font-size: 11px; }
+
+  .dorm-extra__button {
+    min-width: 180px;
+    font-size: 13px;
+    padding: 10px 12px 10px 22px;
+  }
+
+  .dorm-extra__button-dot { width: 22px; height: 22px; font-size: 12px; }
+
+  /* ---------- Кто имеет право ---------- */
+  .dorm-who__icon { width: 50px; height: 50px; margin-bottom: 10px; }
+  .dorm-who__item h3 { font-size: 16px; }
+  .dorm-who__item p { font-size: 13px; }
+
+  /* ---------- Льготные категории ---------- */
+  .dorm-priority__item { padding: 20px 16px; gap: 10px; }
+  .dorm-priority__item p { font-size: 13px; }
+  .dorm-icon-sm { width: 40px; height: 40px; }
+
+  /* ---------- Таймлайн ---------- */
+  .dorm-tl__content h3 { font-size: 14px; }
+  .dorm-tl__content p { font-size: 12px; }
+  .dorm-tl__icon { width: 36px; height: 36px; }
+  .dorm-tl__dot { width: 16px; height: 16px; }
+
+  /* ---------- Документы ---------- */
+  .dorm-doc h3 { font-size: 15px; }
+  .dorm-doc p { font-size: 12px; }
+
+  /* ---------- Стоимость ---------- */
+  .dorm-cost__text h3 { font-size: 13.5px; }
+  .dorm-cost__text p { font-size: 12px; }
+  .dorm-cost__info { font-size: 11px; padding: 8px 8px 8px 16px; }
+
+  /* ---------- Права и обязанности ---------- */
+  .dorm-rights__col h3 { font-size: 16px; }
+  .dorm-rights__col li { font-size: 12.5px; grid-template-columns: 40px 1fr; }
+  .dorm-rights__icon { width: 40px; height: 40px; }
+
+  /* ---------- Пропускной режим ---------- */
+  .dorm-pass__item { grid-template-columns: 50px 1fr; gap: 12px; padding: 20px 0; }
+  .dorm-pass__icon { width: 50px; height: 50px; }
+  .dorm-pass__text h3 { font-size: 13px; }
+  .dorm-pass__text p { font-size: 12px; }
+
+  /* ---------- Студенческое самоуправление ---------- */
+  .dorm-council__note { padding: 18px 18px 16px 44px; font-size: 13px; }
+
+  /* ---------- Контакты ---------- */
+  .dorm-contacts__text p { font-size: 13px; }
+  .mascot--dorm5 { width: 180px; }
+
+  /* ---------- Кнопки ---------- */
+  .dorm-action-row { font-size: 13.5px; }
+  .dorm-action-button { width: 140px; padding-left: 36px; font-size: 12px; }
+
+  /* ---------- Маскоты ---------- */
+  .mascot--dorm { width: 160px; }
+  .mascot--dorm2 { width: 180px; }
+  .mascot--dorm3 { width: 180px; }
+  .mascot--dorm4 { width: 180px; }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .dormitory { transition: none; }
+  .dorm-carousel__track { transition: none; }
+}
